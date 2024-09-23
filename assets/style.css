@@ -1,0 +1,106 @@
+@keyframes scanline {
+  0% {
+    top: 99%
+  }
+}
+
+@keyframes flicker { 
+  0% { opacity: 0.119; } 
+  5% { opacity: 0.02841; } 
+  10% { opacity: 0.35748; } 
+  15% { opacity: 0.88852; } 
+  20% { opacity: 0.9408; } 
+  25% { opacity: 0.35088; } 
+  30% { opacity: 0.22426; } 
+  35% { opacity: 0.26418; } 
+  40% { opacity: 0.09249; } 
+  45% { opacity: 0.35312; } 
+  50% { opacity: 0.89436; } 
+  55% { opacity: 0.9574; } 
+  60% { opacity: 0.19754; } 
+  65% { opacity: 0.05086; } 
+  70% { opacity: 0.12137; } 
+  75% { opacity: 0.75791; } 
+  80% { opacity: 0.89617; } 
+  85% { opacity: 0.90183; } 
+  90% { opacity: 0.20657; } 
+  95% { opacity: 0.64125; } 
+  100% { opacity: 0.78042; }
+}
+
+
+.scanlines {
+  position: fixed;
+  pointer-events: none;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 2px, 3px 100%;
+}
+
+.scanline_bold {
+  position: fixed;
+  pointer-events: none;
+  top: 0%;
+  width: 100%;
+  min-width: 100%;
+  height: 2px;
+  z-index: 110;
+  background: rgba(0, 0, 0, .3);
+  opacity: 0.75;
+  animation: scanline 7.77s linear infinite;
+}
+
+.flicker {
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  z-index: 115;
+  background: rgba(9, 8, 8, 0.1);
+  animation: flicker 0.333s infinite;
+}
+
+body {
+  margin: 0;
+  background-color: #0C2201;
+  min-width: 100%;
+  position: absolute;
+}
+
+pre {
+  position: absolute;
+  margin: auto;
+  font-family: monospace;
+  font-weight: 900;
+  color: white;
+  text-shadow: #AAEEAF 0px 0px 6px;
+  font-size: 22px;
+}
+
+.challenge {
+  padding-top: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Found me!
+* When I first encountered a problem like this, I was stuck on it for ages.
+* So, I'll give you a little push in the right direction.
+* Yes, it's a hexdump of a file.
+* Yes, you need to manipulate the file.
+* How? I can't tell you. You've probably exhausted the 'usual suspects', 
+*   but the 'usual suspects' are usually only encoding at best.
+* What makes effectively all modern *encryption* possible?
+*/
